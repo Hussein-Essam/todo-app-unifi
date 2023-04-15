@@ -38,6 +38,17 @@ router.get('/:userId/todo/:todoId', async (req, res) => {
   }
 });
 
+router.get('/:userId/todo', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findById(userId);
+    if (!user) throw new Error('User not found');
+    const todos = await Todo.find({ user: user._id });
+    return res.json({ todos });
+  } catch (err) {
+    res.status(404).send(err);
+  }
+});
 
 router.delete('/:userId/todo/:todoId', async (req, res) => {
   try {
