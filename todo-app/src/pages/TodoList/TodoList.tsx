@@ -8,6 +8,19 @@ import { Link } from 'react-router-dom';
 const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const getTodoList = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/api/users/${USER_ID}/todo`
+      );
+      setTodos(res.data.todos);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    getTodoList();
+  }, []);
+
   return (
     <List>
       {todos.map((todo) => (
