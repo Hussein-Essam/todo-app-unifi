@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "dacf27db-84c9-4250-8c0a-d2884dd44fae",
+		"name": "todo-app-unifi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9423823"
+	},
+	"item": [
+		{
+			"name": "add todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Todo 1\",\n    \"description\": \"todo1 desc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/643b0afc0d5275b1900e9c8c/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"643b0afc0d5275b1900e9c8c",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all todos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete todo by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update todo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get todo by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
